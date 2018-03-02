@@ -18,12 +18,12 @@ PayMap是一个使用Java语言集成三方支付的小Demo，现已集成支付
 - 2、重要的是学习过程，而不是结果。但，结果同样重要，加油。gogogo。
 - 3、框架搭建就略过了。配置文件太多。遇到的时候贴出来。也收藏起来，留着备用。
 - 4、Gist、[Insight.io for GitHub](https://chrome.google.com/webstore/detail/insightio-for-github/pmhfgjjhhomfplgmbalncpcohgeijonh)必备吧，[划词翻译](https://chrome.google.com/webstore/detail/ikhdkkncnoglghljlkmcimlnlhkeamad?utm_source=chrome-app-launcher-info-dialog)不懂的单词划一划。
-- 在IDEA中我会注重代码规范，但是这里为了节约地方，能省的就省略了。谅解。
+- 5、在IDEA中我会注重代码规范，但是这里为了节约地方，能省的就省略了。还请谅解。
 
 
 ### 1、核心包～common
 
-因为没有文档，只能根据自己之前的经验。先把必备的配置文件，包弄好。项目跑不起来，没关系。重要的是学习,先从核心包，common开始学习。配置文件就不贴了。需要的可以到[GitHub](https://github.com/guoxiaoxu)去找。
+因为没有文档，只能根据自己之前的经验。先把必备的配置文件，包弄好。项目跑不起来，没关系。重要的是学习,先从核心包，common开始学习。配置文件就不贴了。需要的可以到[GitHub](https://github.com/guoxiaoxu/PayMap)去找。
 
 我们先整体看一下结构
 
