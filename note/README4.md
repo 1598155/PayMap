@@ -267,3 +267,31 @@ public class PayRequestQueueListener implements ChannelAwareMessageListener {
     }
 }
 ```
+
+配置文件
+
+```xml
+    <!--statelessReealm-->
+    <bean id="statelessRealm" class="com.guo.sps.realm.StatelessAuthRealm">
+        <property name="cachingEnabled" value="false"/>
+    </bean>
+    <!--statelessFilter-->
+    <bean id="statelessFilter" class="com.guo.sps.realm.filters.StatelessAuthcFilter"></bean>
+    
+    <bean id="payRequestQueueListener" class="com.guo.sps.mq.PayRequestQueueListener"/>
+```
+
+web.xml
+
+```xml
+    <filter>
+        <filter-name>loggingFilter</filter-name>
+        <filter-class>com.guo.core.web.system.filters.LoggingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>loggingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+```

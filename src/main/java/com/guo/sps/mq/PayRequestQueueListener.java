@@ -3,6 +3,7 @@ package com.guo.sps.mq;
 import com.alibaba.fastjson.JSON;
 import com.guo.core.mq.Gson2JsonMessageConverter;
 import com.guo.sps.dto.PayRequestParam;
+import com.guo.sps.services.IPayRouteService;
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

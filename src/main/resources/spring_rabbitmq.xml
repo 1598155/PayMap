@@ -33,8 +33,8 @@
         <rabbit:listener queues="payRequestQueue" ref="payRequestQueueListener"/>
     </rabbit:listener-container>
 
-    <bean id="payRequestQueueListener" class="com.hugnew.sps.mq.PayRequestQueueListener"/>
+    <bean id="payRequestQueueListener" class="com.guo.sps.mq.PayRequestQueueListener"/>
 
-    <bean id="gsonConverter" class="com.hugnew.core.mq.Gson2JsonMessageConverter"/>
+    <bean id="gsonConverter" class="com.guo.core.mq.Gson2JsonMessageConverter"/>
 
 </beans>
