@@ -20,6 +20,17 @@ PayMap是一个使用Java语言集成三方支付的小Demo，现已集成支付
 - 4、Gist、[Insight.io for GitHub](https://chrome.google.com/webstore/detail/insightio-for-github/pmhfgjjhhomfplgmbalncpcohgeijonh)必备吧，[划词翻译](https://chrome.google.com/webstore/detail/ikhdkkncnoglghljlkmcimlnlhkeamad?utm_source=chrome-app-launcher-info-dialog)不懂的单词划一划。
 - 5、在IDEA中我会注重代码规范，但是这里为了节约地方，能省的就省略了。还请谅解。
 
+## 目录
+- 2、core.dao，service，web(重点是接口的设计)[点这里](https://github.com/guoxiaoxu/PayMap/blob/master/note/README1.md)
+
+- 3、sps包～dto、enums、mq[点这里](https://github.com/guoxiaoxu/PayMap/blob/master/note/README2.md)
+
+- 4、在Dao层定义了domian、mapper映射文件，想了解的可以去看看。有助于理解整个系统。[点这里](https://github.com/guoxiaoxu/PayMap/blob/master/note/README4.md)
+
+- 5、pay.util.app。 pay.stratege,支付工具类，和支付策略[点这里](https://github.com/guoxiaoxu/PayMap/blob/master/note/README5.md)
+
+- 6、sps.service及实现类(**重点**)[点这里](https://github.com/guoxiaoxu/PayMap/blob/master/note/README5.md)
+
 
 ### 1、核心包～common
 
