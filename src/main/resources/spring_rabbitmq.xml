@@ -11,16 +11,20 @@
 
     <rabbit:connection-factory id="connectionFactory" host="${rabbitmq.master.ip}" port="${rabbitmq.master.port}"
                                username="${rabbitmq.master.username}" password="${rabbitmq.master.password}"/>
-
+    <!-- 通用 template声明 -->
     <rabbit:template id="amqpTemplate" connection-factory="connectionFactory"
                      exchange="order_topic_exchange" message-converter="gsonConverter"/>
 
     <rabbit:admin connection-factory="connectionFactory"/>
-
+    <!-- queue 队列声明-->
     <rabbit:queue name="payRequestQueue" durable="true"/>
     <rabbit:queue name="payRequestCallbackQueue" durable="true"/>
     <rabbit:queue name="payNotifyQueue" durable="true"/>
-
+    <!-- topic-exchange，作为主题模式使用。
+   匹配routingkey的模式，这里匹配两个queue
+   queue_topic准备匹配key为zhu.q1
+   queue_topic2准备匹配key为zhu.q2
+    -->
     <rabbit:topic-exchange name="pay_topic_exchange">
         <rabbit:bindings>
             <rabbit:binding queue="payRequestQueue" pattern="payRequest.#"/>
@@ -28,13 +32,13 @@
             <rabbit:binding queue="payNotifyQueue" pattern="payNotify.#"/>
         </rabbit:bindings>
     </rabbit:topic-exchange>
-
+    <!--监听器-->
     <rabbit:listener-container connection-factory="connectionFactory" acknowledge="manual" concurrency="10">
         <rabbit:listener queues="payRequestQueue" ref="payRequestQueueListener"/>
     </rabbit:listener-container>
-
+    <!--MQ监听支付请求入口消息-->
     <bean id="payRequestQueueListener" class="com.guo.sps.mq.PayRequestQueueListener"/>
-
+    <!--MQ MSG序列化JSON转换器-->
     <bean id="gsonConverter" class="com.guo.core.mq.Gson2JsonMessageConverter"/>
 
 </beans>

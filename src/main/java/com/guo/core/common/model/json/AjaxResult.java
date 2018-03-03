@@ -2,8 +2,10 @@ package com.guo.core.common.model.json;
 
 import com.guo.core.common.constant.ActionConstants;
 import com.guo.core.common.exception.ResultCode;
+import com.guo.core.common.exception.ValidationError;
 
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by guo on 3/2/2018.
@@ -18,7 +20,7 @@ public class AjaxResult implements Serializable {
     private String Message = ActionConstants.DEFAULT_SUCCESS_RETURNMSG;
 
     //请求结果
-    private Object Date = null;
+    private Object Data = null;
 
     public String getErrorCode() {
         return ErrorCode;
@@ -36,12 +38,12 @@ public class AjaxResult implements Serializable {
         Message = message;
     }
 
-    public Object getDate() {
-        return Date;
+    public Object getData() {
+        return Data;
     }
 
-    public void setDate(Object date) {
-        Date = date;
+    public void setData(Object data) {
+        Data = data;
     }
 
     /**
@@ -54,7 +56,7 @@ public class AjaxResult implements Serializable {
     public static AjaxResult getOK(String message, Object obj) {
         AjaxResult result = new AjaxResult();
         result.setMessage(message);
-        result.setDate(obj);
+        result.setData(obj);
         return result;
     }
 
@@ -67,7 +69,7 @@ public class AjaxResult implements Serializable {
     public static AjaxResult getOK(Object obj) {
         AjaxResult result = new AjaxResult();
         result.setMessage(ActionConstants.DEFAULT_SUCCESS_RETURNMSG);
-        result.setDate(obj);
+        result.setData(obj);
         return result;
     }
 
@@ -92,7 +94,7 @@ public class AjaxResult implements Serializable {
         AjaxResult result = new AjaxResult();
         result.setErrorCode(errorCode.getCode());
         result.setMessage(message);
-        result.setDate(obj);
+        result.setData(obj);
         return result;
     }
 
@@ -111,7 +113,8 @@ public class AjaxResult implements Serializable {
         return "AjaxResult{" +
                 "ErrorCode='" + ErrorCode + '\'' +
                 ", Message='" + Message + '\'' +
-                ", Date=" + Date +
+                ", Data=" + Data +
                 '}';
     }
+
 }
